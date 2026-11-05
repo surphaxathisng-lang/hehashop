@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ร้านชายต้นไม้ | จำหน่ายต้นไม้</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    color: #263d2d;
+    background: #fff;
+}
+
+header {
+    background: #19452e;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #e9c879;
+}
+
+.hero {
+    background: linear-gradient(#102d2070,#102d2090),
+    url('https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=1500');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 120px 15px;
+}
+
+.hero h1 {
+    font-size: 45px;
+}
+
+.btn {
+    background: #d8b66c;
+    color: #193c29;
+    padding: 13px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+section {
+    padding: 65px 7%;
+    text-align: center;
+}
+
+h2 {
+    color: #245b3b;
+    font-size: 30px;
+}
+
+.products {
+    background: #f3f6ef;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px #0002;
+    padding-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card button {
+    background: #245b3b;
+    color: white;
+    border: 0;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #d8b66c;
+    color: #193c29;
+}
+
+.price {
+    color: #ad812c;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.promo {
+    background: #19452e;
+    color: white;
+}
+
+.promo h2 {
+    color: #e9cf91;
+}
+
+.about {
+    background: white;
+}
+
+.contact {
+    background: #f3f6ef;
+}
+
+.cart {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.cart button {
+    cursor: pointer;
+}
+
+footer {
+    background: #143923;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width:900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    nav {
+        margin-top: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌿 ร้านชายต้นไม้</div>
+
+    <nav>
+        <a href="#home">หน้าหลัก</a>
+        <a href="#products">สินค้า</a>
+        <a href="#promotion">โปรโมชั่น</a>
+        <a href="#about">เกี่ยวกับร้าน</a>
+        <a href="#contact">ติดต่อร้าน</a>
+        <a href="#cart">🛒 ตะกร้า</a>
+    </nav>
+</header>
+
+<!-- หน้าร้าน -->
+<div class="hero" id="home">
+    <h1>ยินดีต้อนรับสู่ร้านชายต้นไม้</h1>
+    <h2 style="color:#f4dda5">
+        เติมความสดชื่นให้ทุกพื้นที่
+    </h2>
+    <p>จำหน่ายต้นไม้สวยงาม คุณภาพดี ราคาเป็นกันเอง</p>
+    <a href="#products" class="btn">เลือกชมสินค้า</a>
+</div>
+
+<!-- สินค้า -->
+<section class="products" id="products">
+    <h2>🌱 สินค้าของเรา</h2>
+    <p>เลือกต้นไม้ที่คุณชื่นชอบได้เลย</p>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1593691509543-c55fb32e5cee?w=600">
+            <h3>มอนสเตอร่า</h3>
+            <p>ไม้ใบตกแต่งบ้าน</p>
+            <p class="price">350 บาท</p>
+            <button onclick="add('มอนสเตอร่า',350)">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600">
+            <h3>ยางอินเดีย</h3>
+            <p>ไม้ประดับใบสวย</p>
+            <p class="price">290 บาท</p>
+            <button onclick="add('ยางอินเดีย',290)">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=600">
+            <h3>ไม้ฟอกอากาศ</h3>
+            <p>เพิ่มพื้นที่สีเขียว</p>
+            <p class="price">150 บาท</p>
+            <button onclick="add('ไม้ฟอกอากาศ',150)">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=600">
+            <h3>ลิ้นมังกร</h3>
+            <p>ปลูกง่าย ดูแลสะดวก</p>
+            <p class="price">180 บาท</p>
+            <button onclick="add('ลิ้นมังกร',180)">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1597055181300-e3633a917c4b?w=600">
+            <h3>กระบองเพชร</h3>
+            <p>ต้นไม้ขนาดเล็ก</p>
+            <p class="price">99 บาท</p>
+            <button onclick="add('กระบองเพชร',99)">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600">
+            <h3>เฟิร์น</h3>
+            <p>เพิ่มความร่มรื่น</p>
+            <p class="price">160 บาท</p>
+            <button onclick="add('เฟิร์น',160)">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1597055181449-1e5a6b2e8e6d?w=600">
+            <h3>กล้วยไม้</h3>
+            <p>ไม้ดอกสวยงาม</p>
+            <p class="price">250 บาท</p>
+            <button onclick="add('กล้วยไม้',250)">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=600">
+            <h3>พลูด่าง</h3>
+            <p>ไม้เลื้อยใบสวย</p>
+            <p class="price">120 บาท</p>
+            <button onclick="add('พลูด่าง',120)">เพิ่มลงตะกร้า</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- โปรโมชั่น -->
+<section class="promo" id="promotion">
+    <h2>🎉 โปรโมชั่นพิเศษ</h2>
+    <h3>ซื้อครบ 500 บาท ลดทันที 10%</h3>
+    <p>เลือกซื้อสินค้าได้หลากหลายรายการ</p>
+    <p>โปรโมชั่นตัวอย่าง สามารถเปลี่ยนแปลงได้</p>
+</section>
+
+<!-- เกี่ยวกับร้าน -->
+<section class="about" id="about">
+    <h2>🌳 เกี่ยวกับร้านชายต้นไม้</h2>
+    <p>
+        ร้านชายต้นไม้จำหน่ายต้นไม้ประดับ ไม้ฟอกอากาศ
+        ต้นไม้ตกแต่งสวน และอุปกรณ์ปลูกต้นไม้
+    </p>
+    <p>
+        เราใส่ใจในการคัดเลือกสินค้า
+        พร้อมให้คำแนะนำการปลูกและดูแลต้นไม้
+    </p>
+</section>
+
+<!-- ตะกร้าสินค้า -->
+<section id="cart">
+    <h2>🛒 ตะกร้าสินค้า</h2>
+    <div class="cart">
+        <div id="cartItems">ยังไม่มีสินค้าในตะกร้า</div>
+        <hr>
+        <h3 id="total">ยอดรวม 0 บาท</h3>
+        <button class="btn" onclick="checkout()">สั่งซื้อสินค้า</button>
+    </div>
+</section>
+
+<!-- ติดต่อร้าน -->
+<section class="contact" id="contact">
+    <h2>📞 ติดต่อร้านชายต้นไม้</h2>
+    <p>โทรศัพท์ : 0932303631</p>
+    <p>LINE : @tonkawair</p>
+    <p>Facebook : ร้านชายต้นไม้</p>
+    <p>เวลาเปิดบริการ 08.00 - 18.00 น.</p>
+</section>
+
+<footer>
+    <p>© 2026 ร้านชายต้นไม้</p>
+    <p>ขอบคุณที่เลือกเติมความสดชื่นไปกับเรา 🌿</p>
+</footer>
+
+<script>
+let cart = [];
+
+function add(name, price) {
+    cart.push({name, price});
+    renderCart();
+    alert("เพิ่ม " + name + " ลงตะกร้าแล้ว");
+}
+
+function renderCart() {
+    let area = document.getElementById("cartItems");
+    let total = 0;
+
+    if (cart.length === 0) {
+        area.innerHTML = "ยังไม่มีสินค้าในตะกร้า";
+    } else {
+        area.innerHTML = "";
+
+        cart.forEach((item, index) => {
+            total += item.price;
+
+            area.innerHTML += `
+                <p>
+                    ${item.name} - ${item.price} บาท
+                    <button onclick="removeItem(${index})">
+                        ลบ
+                    </button>
+                </p>
+            `;
+        });
+    }
+
+    document.getElementById("total").innerText =
+        "ยอดรวม " + total + " บาท";
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    renderCart();
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("กรุณาเลือกสินค้าก่อนสั่งซื้อ");
+        return;
+    }
+
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+    if (total >= 500) {
+        total = total * 0.9;
+    }
+
+    alert("ขอบคุณที่สั่งซื้อร้านชายต้นไม้\nยอดชำระ " +
+        total.toFixed(2) + " บาท");
+
+    cart = [];
+    renderCart();
+}
+</script>
+
+</body>
+</html>
